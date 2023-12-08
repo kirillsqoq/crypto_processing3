@@ -8,9 +8,19 @@ app.listen(port, () => {
 });
 app.post("/callback", async (req, res) => {
 	console.log("сработал кал бэк");
-		console.log(req.body);
+		logObjectFields(req.body);
 
 });
 app.get("/", function (req, res) {
 	res.send("hello world");
 });
+function logObjectFields(obj) {
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      console.log(`${key}: ${obj[key]}`);
+    }
+  }
+}
+
+// Пример использования функции
+
