@@ -2,12 +2,14 @@ const express = require("express");
 
 const app = express();
 const port = 3000;
+app.use(express.json());
+
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
-app.post("/callback", express.json(), async (req, res) => {
+app.post("/callback", async (req, res) => {
 	console.log("сработал кал бэк");
-		logObjectFields(req.body);
+	logObjectFields(req.body);
 
 });
 app.get("/", function (req, res) {
