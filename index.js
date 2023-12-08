@@ -8,6 +8,8 @@ app.listen(port, () => {
 });
 app.post("/callback", async (req, res) => {
 	console.log("сработал кал бэк");
+		console.log(req.body);
+
 });
 app.get("/", function (req, res) {
 	res.send("hello world");
