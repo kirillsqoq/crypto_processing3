@@ -9,7 +9,6 @@ app.post("/callback", async (req, res) => {
 	console.log("callback requset");
 	console.log(req.body);
 	res.setHeader("Content-Type", "application/json");
-	// Отправляем ответ в формате JSON
 	res.json({ message: "Success in JSON format" });
 });
 app.get("/", function (req, res) {
