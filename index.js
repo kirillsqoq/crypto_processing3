@@ -8,8 +8,9 @@ const port = 3000;
 // Используем middleware express.json() для автоматического разбора JSON данных
 app.use(express.json());
 
-app.post('/', (req, res) => {
+app.post('/callback', (req, res) => {
   const data = req.body;
+  console.log(data)
 
   if (data && validateRequest(data)) {
     res.status(200).json({ message: 'This is a correct JSON callback' });
@@ -19,6 +20,8 @@ app.post('/', (req, res) => {
 });
 
 function validateRequest(data) {
+  console.log(data)
+  
   if (typeof data === 'object' && data.verify_hash && secretKey) {
     const ordered = { ...data };
     delete ordered.verify_hash;
