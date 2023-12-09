@@ -22,7 +22,7 @@ const secretKey =
 	"O-WI_EZeXz6IfkPbThcQ6IHEllvh-8ZvVcKbYgyaOIdcjH1Z1p9IQdaoChRJU_gX";
 
 const host = "127.0.0.1";
-const port = 3000;
+const port = 8000;
 
 const vallidateRequest = function (data) {
 	console.log(data);
