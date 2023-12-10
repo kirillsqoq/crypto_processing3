@@ -32,7 +32,7 @@ app.post("/callback", async (req, res) => {
 		//если сработал калбэк, то надо изменить статус соотвествующего инвойса в базе данных
 		const ordersCollection = await getOrdersCollection();
 		console.log(data.status);
-		ordersCollection.updateOne(
+		await ordersCollection.updateOne(
 			{ txn_id: data.txn_id },
 			{ $set: { status: data.status } }
 		);
