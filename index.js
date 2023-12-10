@@ -26,9 +26,7 @@ const port = 3000;
 app.use(express.json());
 
 app.post("/callback", async (req, res) => {
-	const data = req.body;
-	console.log(data);
-	console.log(validateRequest(data));	
+	const data = req.body;	
 	if (data && validateRequest(data)) {
 	console.log('валидировано');
 		//если сработал калбэк, то надо изменить статус соотвествующего инвойса в базе данных
