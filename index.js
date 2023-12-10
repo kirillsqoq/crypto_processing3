@@ -33,7 +33,7 @@ app.post("/callback", async (req, res) => {
 		const ordersCollection = await getOrdersCollection();
 		console.log(data.status);
 		await ordersCollection.updateOne(
-			{ order_number: data.order_number },
+			{ order_number: Number(data.order_number) },
 			{ $set: { status: data.status, txn_id: data.txn_id } }
 		);
 		res.status(200).json({ message: "This is a correct JSON callback" });
