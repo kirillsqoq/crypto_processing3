@@ -27,6 +27,7 @@ app.use(express.json());
 
 app.post("/callback", async (req, res) => {
 	const data = req.body;
+	console.log(data);
 	if (data && validateRequest(data)) {
 		//если сработал калбэк, то надо изменить статус соотвествующего инвойса в базе данных
 		const ordersCollection = await getOrdersCollection();
